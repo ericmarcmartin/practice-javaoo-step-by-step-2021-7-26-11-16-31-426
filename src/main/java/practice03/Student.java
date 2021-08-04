@@ -3,7 +3,7 @@ package practice03;
 import practice02.Person;
 
 public class Student extends Person {
-    private int klass;
+    private final int klass;
 
     public Student(String name, int age, int klass) {
         super(name, age);
@@ -14,11 +14,7 @@ public class Student extends Person {
         return klass;
     }
 
-    public void setKlass(int klass) {
-        this.klass = klass;
-    }
-
     public String introduce() {
-        return "I am a Student. I am at Class " + getKlass() + ".";
+        return String.format("I am a Student. I am at Class %s.", klass);
     }
 }
