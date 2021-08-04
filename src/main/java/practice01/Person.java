@@ -1,8 +1,9 @@
 package practice01;
 
 public class Person {
-    private String name;
-    private int age;
+    private final String name;
+    private final int age;
+
     public Person(String name, int age) {
         this.name = name;
         this.age = age;
@@ -17,6 +18,6 @@ public class Person {
     }
 
     public String introduce() {
-        return "My name is " + getName() + ". I am " + getAge() + " years old.";
+        return String.format("My name is %s. I am %d years old.", name, age);
     }
 }
