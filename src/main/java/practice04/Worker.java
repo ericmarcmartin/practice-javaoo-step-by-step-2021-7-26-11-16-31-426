@@ -1,7 +1,5 @@
 package practice04;
 
-import practice03.Person;
-
 public class Worker extends Person {
 
     public Worker(String name, int age) {
@@ -9,6 +7,6 @@ public class Worker extends Person {
     }
 
     public String introduce() {
-        return "My name is " + getName() + ". I am " + getAge() + " years old. I am a Worker. I have a job.";
+        return super.introduce() + " I am a Worker. I have a job.";
     }
 }
