@@ -16,6 +16,8 @@ public class Student extends Person {
     @Override
     public String introduce() {
         String MESSAGE = super.introduce()+" I am a Student. I am";
-        return String.format("%s at Class %d.", MESSAGE, klass.getNumber());
+        return equals(this.klass.getLeader()) ?
+                String.format("%s Leader of Class %d.", MESSAGE, klass.getNumber()) :
+                String.format("%s at Class %d.", MESSAGE, klass.getNumber());
     }
 }
