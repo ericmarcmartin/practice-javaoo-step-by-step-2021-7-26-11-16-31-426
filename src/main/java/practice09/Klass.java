@@ -11,6 +11,7 @@ public class Klass {
     public Klass(int number) {
         this.number = number;
     }
+
     public int getNumber() {
         return number;
     }
@@ -29,5 +30,9 @@ public class Klass {
 
     public Student getLeader() {
         return this.leader;
+    }
+
+    public void appendMember(Student member) {
+        this.members.add(member);
     }
 }
