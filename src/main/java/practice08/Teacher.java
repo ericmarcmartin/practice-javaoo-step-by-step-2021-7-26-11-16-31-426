@@ -18,9 +18,10 @@ public class Teacher extends Person {
 
     @Override
     public String introduce() {
+        String MESSAGE = super.introduce()+" I am a Teacher. I teach";
         return klass != null ?
-                String.format("%s I am a Teacher. I teach Class %d.", super.introduce(), klass.getNumber()) :
-                String.format("%s I am a Teacher. I teach No Class.", super.introduce());
+                String.format("%s Class %d.", MESSAGE, klass.getNumber()) :
+                String.format("%s No Class.", MESSAGE);
     }
 
     public String introduceWith(Student member) {
