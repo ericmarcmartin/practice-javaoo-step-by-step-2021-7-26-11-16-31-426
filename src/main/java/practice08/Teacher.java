@@ -1,7 +1,8 @@
 package practice08;
 
-public class Teacher extends Person{
+public class Teacher extends Person {
     private Klass klass;
+
     public Teacher(int id, String name, int age, Klass klass) {
         super(id, name, age);
         this.klass = klass;
@@ -9,5 +10,10 @@ public class Teacher extends Person{
 
     public Klass getKlass() {
         return klass;
+    }
+
+    @Override
+    public String introduce() {
+        return String.format("%s I am a Teacher. I teach Class %d.", super.introduce(), klass.getNumber());
     }
 }
