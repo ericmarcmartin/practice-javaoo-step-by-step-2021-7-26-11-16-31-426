@@ -1,11 +1,14 @@
 package practice07;
 
 public class Person {
-    private String name;
-    private int age;
-    private int klass;
+    private final String name;
+    private final int age;
+    private final int klass;
 
     public Person(int klass, String name, int age) {
+        this.klass = klass;
+        this.name = name;
+        this.age = age;
 
     }
 
