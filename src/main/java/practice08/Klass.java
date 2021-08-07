@@ -1,8 +1,12 @@
 package practice08;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Klass {
     private final int number;
     private Student leader;
+    private List<Student> members = new ArrayList<>();
 
     public Klass(int number) {
 
@@ -18,13 +22,18 @@ public class Klass {
     }
 
     public void assignLeader(Student leader) {
-        System.out.print("It is not one of us.\n");
+        if (members.contains(leader)) {
+            this.leader = leader;
+        } else {
+            System.out.print("It is not one of us.\n");
+        }
     }
 
     public Student getLeader() {
-        return null;
+        return this.leader;
     }
 
     public void appendMember(Student member) {
+        this.members.add(member);
     }
 }
