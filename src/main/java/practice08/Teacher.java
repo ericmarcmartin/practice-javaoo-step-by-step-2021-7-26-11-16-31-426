@@ -20,6 +20,6 @@ public class Teacher extends Person {
     public String introduce() {
         return klass!=null ?
                 String.format("%s I am a Teacher. I teach Class %d.", super.introduce(), klass.getNumber()) :
-                String.format("%s I am a Teacher. I teach Class.", super.introduce());
+                String.format("%s I am a Teacher. I teach No Class.", super.introduce());
     }
 }
