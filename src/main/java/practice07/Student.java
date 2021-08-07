@@ -1,7 +1,9 @@
 package practice07;
 
-public class Student extends Person{
+public class Student extends Person {
     private final Klass klass;
+    private final String I_AM_STUDENT = " I am a Student. I am";
+
     public Student(int id, String name, int age, Klass klass) {
         super(id, name, age);
         this.klass = klass;
@@ -11,10 +13,11 @@ public class Student extends Person{
         return this.klass;
     }
 
-    public String introduce(){
-        if(this.klass.getLeader() != null){
-            return super.introduce() + String.format(" I am a Student. I am Leader of %s.", klass.getDisplayName());
+    public String introduce() {
+        String klassDisplayName = klass.getDisplayName();
+        if (this.klass.getLeader() != null) {
+            return super.introduce() + String.format("%s Leader of %s.", I_AM_STUDENT, klassDisplayName);
         }
-        return super.introduce() + String.format(" I am a Student. I am at %s.", klass.getDisplayName());
+        return super.introduce() + String.format("%s at %s.", I_AM_STUDENT, klassDisplayName);
     }
 }
