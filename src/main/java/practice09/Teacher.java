@@ -20,17 +20,15 @@ public class Teacher extends Person {
 
     @Override
     public String introduce() {
-        if(classes ==null){
-            return String.format("%s I am a Teacher. I teach No Class.", super.introduce()) ;
-        }
-        else if(classes.size()>1){
-            String klasses ="";
-            for(Klass klass : classes){
-                if(classes.getFirst().equals(klass)){
-                    klasses = String.format("%s",klass.getNumber());
-                }
-                else{
-                    klasses = String.format("%s, %s",klasses,klass.getNumber());
+        if (classes == null) {
+            return String.format("%s I am a Teacher. I teach No Class.", super.introduce());
+        } else if (classes.size() > 1) {
+            String klasses = "";
+            for (Klass klass : classes) {
+                if (classes.getFirst().equals(klass)) {
+                    klasses = String.format("%s", klass.getNumber());
+                } else {
+                    klasses = String.format("%s, %s", klasses, klass.getNumber());
                 }
             }
             return String.format("%s I am a Teacher. I teach Class %s.", super.introduce(), klasses);
@@ -39,4 +37,8 @@ public class Teacher extends Person {
         return String.format("%s I am a Teacher. I teach Class %d.", super.introduce(), classes.getFirst().getNumber());
     }
 
+    public boolean isTeaching(Student student) {
+
+        return classes.contains(student.getKlass());
+    }
 }
