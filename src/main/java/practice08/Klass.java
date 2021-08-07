@@ -11,4 +11,8 @@ public class Klass {
     public int getNumber() {
         return this.number;
     }
+
+    public String getDisplayName() {
+        return null;
+    }
 }
