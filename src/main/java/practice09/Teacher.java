@@ -20,7 +20,10 @@ public class Teacher extends Person {
 
     @Override
     public String introduce() {
-        if(classes.size()>1){
+        if(classes ==null){
+            return String.format("%s I am a Teacher. I teach No Class.", super.introduce()) ;
+        }
+        else if(classes.size()>1){
             String klasses ="";
             for(Klass klass : classes){
                 if(classes.getFirst().equals(klass)){
