@@ -33,4 +33,8 @@ public class Person {
         Person person = (Person) o;
         return age == person.age && id == person.id && Objects.equals(name, person.name);
     }
+
+    public String introduce() {
+        return null;
+    }
 }
