@@ -11,10 +11,10 @@ public class Person {
         this.age = age;
     }
     public String getName() {
-        return null;
+        return this.name;
     }
 
     public int getAge() {
-        return 0;
+        return this.age;
     }
 }
