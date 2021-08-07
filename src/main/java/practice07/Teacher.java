@@ -2,6 +2,7 @@ package practice07;
 
 public class Teacher extends Person {
     private Klass klass;
+
     public Teacher(int id, String name, int age, Klass klass) {
         super(id, name, age);
         this.klass = klass;
@@ -16,9 +17,9 @@ public class Teacher extends Person {
     }
 
     public String introduce() {
-        if (this.klass == null) {
-            return super.introduce() + " I am a Teacher. I teach No Class.";
-        }
-        return super.introduce() + String.format(" I am a Teacher. I teach %s.", klass.getDisplayName());
+        String I_AM_A_TEACHER = "I am a Teacher. I teach";
+        return klass == null ?
+                String.format("%s %s No Class.", super.introduce(), I_AM_A_TEACHER) :
+                String.format("%s %s %s.", super.introduce(), I_AM_A_TEACHER, klass.getDisplayName());
     }
 }
