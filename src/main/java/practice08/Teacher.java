@@ -18,7 +18,7 @@ public class Teacher extends Person {
 
     @Override
     public String introduce() {
-        return klass!=null ?
+        return klass != null ?
                 String.format("%s I am a Teacher. I teach Class %d.", super.introduce(), klass.getNumber()) :
                 String.format("%s I am a Teacher. I teach No Class.", super.introduce());
     }
