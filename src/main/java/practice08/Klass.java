@@ -15,4 +15,12 @@ public class Klass {
     public String getDisplayName() {
         return String.format("Class %d", number);
     }
+
+    public void assignLeader(Student student) {
+
+    }
+
+    public Student getLeader() {
+        return null;
+    }
 }
