@@ -24,4 +24,7 @@ public class Klass {
     public Student getLeader() {
         return null;
     }
+
+    public void appendMember(Student member) {
+    }
 }
