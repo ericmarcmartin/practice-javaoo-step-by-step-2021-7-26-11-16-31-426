@@ -6,15 +6,14 @@ import java.util.List;
 public class Klass {
     private final int number;
     private Student leader;
-    private List<Student> members = new ArrayList<>();
+    private final List<Student> members = new ArrayList<>();
 
     public Klass(int number) {
-
         this.number = number;
     }
 
     public int getNumber() {
-        return this.number;
+        return number;
     }
 
     public String getDisplayName() {
