@@ -7,7 +7,7 @@ public class Teacher extends Person {
         this.klass = klass;
     }
 
-    public String  getKlass() {
-        return new String();
+    public Klass getKlass() {
+        return this.klass;
     }
 }
