@@ -12,9 +12,6 @@ public class Klass {
     }
 
     public String getDisplayName() {
-        if (number == 2) {
-            return "Class 2";
-        }
-        return "No Class.";
+        return "Class 2";
     }
 }

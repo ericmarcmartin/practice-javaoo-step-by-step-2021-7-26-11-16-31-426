@@ -3,6 +3,7 @@ package practice06;
 public class Teacher extends Person {
     private Klass klass;
     private final String TEACH = "teach ";
+    private final String DONT_TEACH = "don't teach ";
     String message = super.introduce() + " I am a Teacher. I ";
 
     public Teacher(String name, int age, Klass klass) {
@@ -21,8 +22,7 @@ public class Teacher extends Person {
     @Override
     public String introduce() {
         if (klassDoesNotMatchWithTeacher()) {
-            Klass klass = new Klass(0);
-            return doNotTeach(klass);
+            return teachNoClass();
         }
         return doTeach(klass.getDisplayName());
     }
@@ -35,14 +35,21 @@ public class Teacher extends Person {
         return message + TEACH + displayName + ".";
     }
 
-    private String doNotTeach(Klass klass) {
-        return message + TEACH + klass.getDisplayName();
+    private String teachNoClass() {
+        return message + TEACH + "No Class.";
     }
 
     public String introduceWith(Student student) {
-        if (student.getKlass().getNumber() != klass.getNumber()) {
-            return message + "don't " + TEACH + student.getName() + ".";
-        }
-        return doTeach(student.getName());
+        return isTeacherSameKlassWith(student) ?
+                doTeach(student.getName()) :
+                doNotTeach(student);
+    }
+
+    private String doNotTeach(Student student) {
+        return message + DONT_TEACH + student.getName() + ".";
+    }
+
+    private boolean isTeacherSameKlassWith(Student student) {
+        return student.getKlass().getNumber() == klass.getNumber();
     }
 }
