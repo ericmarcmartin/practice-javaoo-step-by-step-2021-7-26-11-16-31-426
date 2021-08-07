@@ -12,10 +12,10 @@ public class Person {
     }
 
     public String getName() {
-        return null;
+        return this.name;
     }
 
-    public String getAge() {
-        return null;
+    public int getAge() {
+        return this.age;
     }
 }
